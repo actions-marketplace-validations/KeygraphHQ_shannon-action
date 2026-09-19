@@ -50,7 +50,7 @@ jobs:
 
 ### Job timeout
 
-A job gets 6 hours by default (`timeout-minutes` defaults to `360`), which is enough for Shannon.
+A job gets 6 hours by default (`timeout-minutes` defaults to `360`), which is enough for most scans. For larger repositories or slower model providers a scan can take longer than 6 hours; since GitHub-hosted runners are capped at 6 hours, a self-hosted runner is recommended for those.
 
 ## Examples
 
@@ -110,7 +110,7 @@ with:
 | `api-key` | | - | LLM provider API key (`SHANNON_AI_API_KEY`) for any non-Bedrock provider, including the default Anthropic model. |
 | `aws-bearer-token-bedrock` | | - | Amazon Bedrock bearer token (`AWS_BEARER_TOKEN_BEDROCK`). Required for `model: amazon-bedrock:...`. |
 | `aws-region` | | - | AWS region for Bedrock (`AWS_REGION`). Required for `model: amazon-bedrock:...`. |
-| `version` | | `2.6.0` | Version of the `@keygraph/shannon` npm package to run. |
+| `version` | | `3.0.0` | Version of the `@keygraph/shannon` npm package to run. |
 | `pipeline-testing` | | `false` | Minimal prompts for fast pipeline testing. |
 | `fail-on-severity` | | `none` | Fail the job if any exploited finding is at or above this severity: `none`, `low`, `medium`, `high`, `critical`. See [Pass / fail](#pass--fail). |
 | `upload-sarif` | | `false` | Upload `report.sarif` (when produced) to GitHub code scanning. Requires `security-events: write`. |
